@@ -1,0 +1,3 @@
+* SKK用将棋用語辞書
+
+IME用将棋用語辞書 https://idaemons.org/projects/shogidic/ を DDSKK で利用できるようにしたものです。
