@@ -24,8 +24,14 @@ body.lines.collect(&:strip).each do |line|
   if line.match(/^#/)
     out << ";; #{line}"
   else
-    kanji, yomi, syurui = line.split(/\s+/)
-    out << "#{kanji} /#{yomi}/"
+    # "あい\t合\t【名サ】"
+    yomi, kanji, syurui = line.split(/\t+/)
+    if yomi.match?(/[[:digit:]]{2}/)
+      p [:skip, yomi]
+      next
+    end
+    yomi = yomi.tr("０-９", "0-9")
+    out << "#{yomi} /#{kanji}/"
   end
 end
 str = out.join("\n") + "\n"
