@@ -14,10 +14,12 @@ class App
 
     @rows = []
 
-    shogi_vje_txt_import
-    nichan_kifu_import
+    vje_import
+    nichan_import
+    file_import("将棋ウォーズ系戦法.txt")
+    file_import("その他.txt")
 
-    @out += @rows
+    @out += @rows.uniq
 
     str = @out.join("\n") + "\n"
     file = Pathname("SKK-JISYO.shogi.dic")
@@ -26,7 +28,7 @@ class App
     puts file
   end
 
-  def shogi_vje_txt_import
+  def vje_import
     shogi_vje_txt_url = "https://raw.githubusercontent.com/knu/imedic-shogi/master/shogi.vje.txt"
 
     file = Pathname("shogi.vje.txt")
@@ -58,14 +60,14 @@ class App
     end
   end
 
-  def nichan_kifu_import
-    other = Pathname("2ch棋譜名前一覧_特殊.txt").readlines.inject({}) do |a, e|
+  def nichan_import
+    other = Pathname("2ch棋譜_名前_特殊.txt").readlines.inject({}) do |a, e|
       kanji, yomi = e.split(/\s+/)
       a.merge(kanji => yomi)
     end
 
     nm = Natto::MeCab.new('-F%m\t%f[0]\t%f[7]')
-    Pathname("2ch棋譜名前一覧.txt").readlines.each do |e|
+    Pathname("2ch棋譜_名前.txt").readlines.each do |e|
       e = e.strip
       if e.match?(/\p{ASCII}/)
       else
@@ -92,6 +94,14 @@ class App
           end
         end
       end
+    end
+  end
+
+  def file_import(file)
+    Pathname(file).readlines.collect(&:strip).inject({}) do |a, e|
+      next if e.empty?
+      yomi, kanji = e.split(/\s+/)
+      @rows << "#{yomi} /#{kanji}/"
     end
   end
 end
