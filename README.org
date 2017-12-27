@@ -1,4 +1,4 @@
-* DDSKK用将棋用語辞書
+* SKK / AuaSKK 用将棋用語辞書
 
 - IME用将棋用語辞書 https://idaemons.org/projects/shogidic/ がベース
 - 位置を表す表記は DDSKK の方で簡単に入力する方法が用意されているため除外
