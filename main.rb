@@ -15,7 +15,7 @@ class App
     @rows = []
 
     vje_import
-    nichan_import
+    file_import("2ch棋譜_名前.txt")
     file_import("将棋ウォーズ系戦法.txt")
     file_import("その他.txt")
 
@@ -60,46 +60,10 @@ class App
     end
   end
 
-  def nichan_import
-    other = Pathname("2ch棋譜_名前_特殊.txt").readlines.inject({}) do |a, e|
-      kanji, yomi = e.split(/\s+/)
-      a.merge(kanji => yomi)
-    end
-
-    nm = Natto::MeCab.new('-F%m\t%f[0]\t%f[7]')
-    Pathname("2ch棋譜_名前.txt").readlines.each do |e|
-      e = e.strip
-      if e.match?(/\p{ASCII}/)
-      else
-        begin
-          yomi_list = []
-          enum = nm.enum_parse(e)
-          enum.each do |e|
-            if e.is_eos?
-              break
-            end
-            kanji, syurui, yomi = e.feature.split(/\t/)
-            yomi = NKF.nkf("-w --hiragana", yomi)
-            yomi_list << yomi
-          end
-          # p [yomi_list.join, e]
-          @rows << "#{yomi_list.join} /#{e}/"
-        rescue Natto::MeCabError
-          if yomi = other[e]
-            p ["読み方補完", e, yomi]
-            @rows << "#{yomi} /#{e}/"
-          else
-            @rows << ";; 読み方不明 /#{e}/ "
-            p ["読み方不明", e]
-          end
-        end
-      end
-    end
-  end
-
   def file_import(file)
     Pathname(file).readlines.collect(&:strip).inject({}) do |a, e|
       next if e.empty?
+      next if e.start_with?("#")
       yomi, kanji = e.split(/\s+/)
       @rows << "#{yomi} /#{kanji}/"
     end
