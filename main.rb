@@ -29,7 +29,7 @@ class App
     if true
       rows = []
       rows += file_import2("2ch棋譜_名前.txt", "人名")
-      rows += file_import2("将棋ウォーズ系戦法.txt", "名刺")
+      rows += file_import2("将棋ウォーズ系戦法.txt", "名詞")
       str = rows.join("\n") + "\n"
       file = Pathname("その他のIME用.sjis.txt")
       file.write(str.tosjis)
