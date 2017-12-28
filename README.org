@@ -24,9 +24,10 @@
 (setq skk-search-prog-list
   '(
     ...
-    (skk-search-jisyo-file "~/.dic/SKK-JISYO.shogi/SKK-JISYO.shogi.dic" 0)
+    (skk-search-jisyo-file "~/.dic/SKK-JISYO.shogi.dic" 0)
     ...
   ))
 #+END_SRC
 
-   AquaSKK の場合は「AquaSKK」→「環境設定」→「辞書」→「追加」で指定
+   - AquaSKK の場合は「AquaSKK」→「環境設定」→「辞書」→「追加」で指定
+   - 辞書の種類を「SKK 辞書 (EUC-JP)」にする
