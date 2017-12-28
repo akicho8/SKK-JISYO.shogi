@@ -41,4 +41,5 @@
 *** その他の場合
 
    [[https://idaemons.org/projects/shogidic/][IME用将棋用語辞書]] と合わせて [[https://github.com/akicho8/SKK-JISYO.shogi/blob/master/その他のIME用.sjis.txt][その他のIME用.sjis.txt]] をなんとかする。
+
    何か別の変換が必要であれば issue でお願いします。
