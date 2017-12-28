@@ -38,6 +38,7 @@
    - 「AquaSKK」→「環境設定」→「辞書」→「追加」で指定
    - 辞書の種類を「SKK 辞書 (EUC-JP)」にする
 
-*** その他
+*** その他の場合
 
-   [[https://idaemons.org/projects/shogidic/][IME用将棋用語辞書]] と合わせて [[https://github.com/akicho8/SKK-JISYO.shogi/blob/master/その他のIME用.sjis.txt][その他のIME用.sjis.txt]] もなんとかする。何か別の変換が必要であれば issue でお願いします
+   [[https://idaemons.org/projects/shogidic/][IME用将棋用語辞書]] と合わせて [[https://github.com/akicho8/SKK-JISYO.shogi/blob/master/その他のIME用.sjis.txt][その他のIME用.sjis.txt]] をなんとかする。
+   何か別の変換が必要であれば issue でお願いします。
