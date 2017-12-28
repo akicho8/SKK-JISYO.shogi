@@ -6,7 +6,7 @@
 
 ** 概要
 
-- IME用将棋用語辞書 https://idaemons.org/projects/shogidic/ (https://github.com/knu/imedic-shogi) がベース
+- [[https://idaemons.org/projects/shogidic/][IME用将棋用語辞書]] (https://github.com/knu/imedic-shogi) がベース
 - 位置を表す表記は DDSKK の方で簡単に入力する方法が用意されているため除外
 - "3しょう" などの "3" の部分は全角で入力するのが難しいため半角に変更
 - 2chの過去棋譜 https://code.google.com/archive/p/zipkifubrowser/downloads の対局者名を取り込み
@@ -37,3 +37,7 @@
    - 同様にダウンロード
    - 「AquaSKK」→「環境設定」→「辞書」→「追加」で指定
    - 辞書の種類を「SKK 辞書 (EUC-JP)」にする
+
+*** その他
+
+   [[https://idaemons.org/projects/shogidic/][IME用将棋用語辞書]] と合わせて [[https://github.com/akicho8/SKK-JISYO.shogi/blob/master/その他のIME用.sjis.txt][その他のIME用.sjis.txt]] もなんとかする。何か別の変換が必要であれば issue でお願いします
