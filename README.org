@@ -1,6 +1,6 @@
 * SKK / AquaSKK 用将棋用語辞書
 
-  [[https://github.com/akicho8/SKK-JISYO.shogi/blob/master/SKK-JISYO.shogi.dic][SKK-JISYO.shogi.dic]]
+** 概要
 
 - IME用将棋用語辞書 https://idaemons.org/projects/shogidic/ がベース
 - 位置を表す表記は DDSKK の方で簡単に入力する方法が用意されているため除外
@@ -8,3 +8,23 @@
 - 2chの過去棋譜 https://code.google.com/archive/p/zipkifubrowser/downloads の対局者名を取り込み
 - 「阿部光瑠」など MeCab さえも読み方がわからないものは分かる範囲で調査
 - 将棋ウォーズなどで使われている囲いや戦型名(ポンポン桂)などを取り込み
+
+** 辞書ファイル
+
+  [[https://github.com/akicho8/SKK-JISYO.shogi/blob/master/SKK-JISYO.shogi.dic][SKK-JISYO.shogi.dic]]
+
+** インストール例
+
+   : % cd ~/.dic
+   : % curl -O https://raw.githubusercontent.com/akicho8/SKK-JISYO.shogi/master/SKK-JISYO.shogi.dic
+
+   ダウンロードした辞書を =~/.skk= の =skk-search-prog-list= に指定する
+
+#+BEGIN_SRC elisp
+(setq skk-search-prog-list
+  '(
+    ...
+    (skk-search-jisyo-file "~/.dic/SKK-JISYO.shogi/SKK-JISYO.shogi.dic" 0)
+    ...
+  ))
+#+END_SRC
