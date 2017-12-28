@@ -1,5 +1,9 @@
 * SKK / AquaSKK 用将棋用語辞書
 
+** 辞書ファイル
+
+  [[https://github.com/akicho8/SKK-JISYO.shogi/blob/master/SKK-JISYO.shogi.dic][SKK-JISYO.shogi.dic]]
+
 ** 概要
 
 - IME用将棋用語辞書 https://idaemons.org/projects/shogidic/ がベース
@@ -8,10 +12,6 @@
 - 2chの過去棋譜 https://code.google.com/archive/p/zipkifubrowser/downloads の対局者名を取り込み
 - 「阿部光瑠」など MeCab さえも読み方がわからないものは分かる範囲で調査
 - 将棋ウォーズなどで使われている囲いや戦型名(ポンポン桂)などを取り込み
-
-** 辞書ファイル
-
-  [[https://github.com/akicho8/SKK-JISYO.shogi/blob/master/SKK-JISYO.shogi.dic][SKK-JISYO.shogi.dic]]
 
 ** インストール例
 
@@ -28,3 +28,5 @@
     ...
   ))
 #+END_SRC
+
+   AquaSKK の場合は「AquaSKK」→「環境設定」→「辞書」→「追加」で指定
