@@ -17,7 +17,6 @@ class App
     vje_import
     file_import("2ch棋譜_名前.txt")
     file_import("将棋ウォーズ系戦法.txt")
-    file_import("その他.txt")
 
     @out += @rows.uniq
 
@@ -26,6 +25,17 @@ class App
     file.write(str.toeuc)
     p @out.count
     puts file
+
+    if true
+      rows = []
+      rows += file_import2("2ch棋譜_名前.txt", "人名")
+      rows += file_import2("将棋ウォーズ系戦法.txt", "名刺")
+      str = rows.join("\n") + "\n"
+      file = Pathname("その他のIME用.sjis.txt")
+      file.write(str.tosjis)
+      p rows.count
+      puts file
+    end
   end
 
   def vje_import
@@ -61,12 +71,23 @@ class App
   end
 
   def file_import(file)
-    Pathname(file).readlines.collect(&:strip).inject({}) do |a, e|
+    Pathname(file).readlines.collect(&:strip).each do |e|
       next if e.empty?
       next if e.start_with?("#")
       yomi, kanji = e.split(/\s+/)
       @rows << "#{yomi} /#{kanji}/"
     end
+  end
+
+  def file_import2(file, kind)
+    list = []
+    Pathname(file).readlines.collect(&:strip).each do |e|
+      next if e.empty?
+      next if e.start_with?("#")
+      yomi, kanji = e.split(/\s+/)
+      list << [yomi, kanji, kind].join("\t")
+    end
+    list
   end
 end
 

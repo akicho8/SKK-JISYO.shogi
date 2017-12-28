@@ -2,7 +2,7 @@
 
 ** 辞書ファイル
 
-  [[https://github.com/akicho8/SKK-JISYO.shogi/blob/master/SKK-JISYO.shogi.dic][SKK-JISYO.shogi.dic]]
+   [[https://github.com/akicho8/SKK-JISYO.shogi/blob/master/SKK-JISYO.shogi.dic][SKK-JISYO.shogi.dic]]
 
 ** 概要
 
@@ -12,6 +12,7 @@
 - 2chの過去棋譜 https://code.google.com/archive/p/zipkifubrowser/downloads の対局者名を取り込み
 - 「阿部光瑠」など MeCab さえも読み方がわからないものは分かる範囲で調査
 - 将棋ウォーズなどで使われている囲いや戦型名(ポンポン桂)などを取り込み
+- ついでにWindowの何かのIME向けに、2ch棋譜の対局者名と、ウォーズの戦法名のみを取り込んで、タブ区切りにした [[https://github.com/akicho8/SKK-JISYO.shogi/blob/master/その他のIME用.sjis.txt][その他のIME用.sjis.txt]] もある
 
 ** インストール例
 
