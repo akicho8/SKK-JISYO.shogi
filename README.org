@@ -15,6 +15,8 @@
 
 ** インストール例
 
+*** DDSKK の場合
+
    : % cd ~/.dic
    : % curl -O https://raw.githubusercontent.com/akicho8/SKK-JISYO.shogi/master/SKK-JISYO.shogi.dic
 
@@ -29,5 +31,8 @@
   ))
 #+END_SRC
 
-   - AquaSKK の場合は「AquaSKK」→「環境設定」→「辞書」→「追加」で指定
+*** AquaSKK 場合
+
+   - 同様にダウンロード
+   - 「AquaSKK」→「環境設定」→「辞書」→「追加」で指定
    - 辞書の種類を「SKK 辞書 (EUC-JP)」にする
