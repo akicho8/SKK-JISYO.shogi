@@ -17,6 +17,7 @@ class App
     vje_import
     file_import("2ch棋譜_名前.txt")
     file_import("将棋ウォーズ系戦法.txt")
+    file_import("その他のキーワード.txt")
 
     @out += @rows.uniq
 
@@ -30,6 +31,7 @@ class App
       rows = []
       rows += file_import2("2ch棋譜_名前.txt", "人名")
       rows += file_import2("将棋ウォーズ系戦法.txt", "名詞")
+      rows += file_import2("その他のキーワード.txt", "名詞")
       str = rows.join("\n") + "\n"
       file = Pathname("その他のIME用.sjis.txt")
       file.write(str.tosjis)
